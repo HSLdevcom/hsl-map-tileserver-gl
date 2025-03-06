@@ -1,0 +1,12 @@
+{
+  "name": "hsl-map-tileserver-gl",
+  "version": "1.0.0",
+  "main": "generateStyles.js",
+  "repository": "https://github.com/HSLdevcom/hsl-map-tileserver-gl",
+  "author": "hsldevcom",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "hsl-map-style": "https://github.com/HSLdevcom/hsl-map-style#4d1ba63e545a6bf5aa6766158f5064966c110364"
+  }
+}
