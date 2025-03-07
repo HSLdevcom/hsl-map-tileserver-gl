@@ -2,7 +2,7 @@
 .DS_Store
 
 # Local tiles
-./data/*.mbtiles
+./data/*
 
 # Local styles
 ./styles/*.json
