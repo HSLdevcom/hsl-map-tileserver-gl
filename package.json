@@ -5,8 +5,11 @@
   "repository": "https://github.com/HSLdevcom/hsl-map-tileserver-gl",
   "author": "hsldevcom",
   "license": "MIT",
+  "scripts": {
+    "make-styles": "node generateStyles.js"
+  },
   "dependencies": {
     "fs": "^0.0.1-security",
-    "hsl-map-style": "https://github.com/HSLdevcom/hsl-map-style#4d1ba63e545a6bf5aa6766158f5064966c110364"
+    "hsl-map-style": "https://github.com/HSLdevcom/hsl-map-style#master"
   }
 }
