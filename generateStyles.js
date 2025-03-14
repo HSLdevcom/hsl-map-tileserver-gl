@@ -15,7 +15,7 @@ const queryParams = [
 
 const mapStylesToGenerate = [
   {
-    name: "hsl_map",
+    name: "hsl-map",
     sourcesUrl,
     queryParams,
     components: {
@@ -23,7 +23,7 @@ const mapStylesToGenerate = [
     }
   },
   {
-    name: "hsl_map_sv",
+    name: "hsl-map-sv",
     sourcesUrl,
     queryParams,
     components: {
@@ -31,8 +31,8 @@ const mapStylesToGenerate = [
       text_sv: { enabled: true }
     }
   },
-  { 
-    name: "hsl_map_en",
+  {
+    name: "hsl-map-en",
     sourcesUrl,
     queryParams,
     components: {
@@ -41,7 +41,7 @@ const mapStylesToGenerate = [
     }
   },
   {
-    name: "hsl_map_fisv",
+    name: "hsl-map-fisv",
     sourcesUrl,
     queryParams,
     components: {
@@ -50,7 +50,7 @@ const mapStylesToGenerate = [
     }
   },
   {
-    name: "hsl_map_grayscale",
+    name: "hsl-map-grayscale",
     sourcesUrl,
     queryParams,
     components: {
