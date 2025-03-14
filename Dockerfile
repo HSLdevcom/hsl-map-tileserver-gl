@@ -1,4 +1,5 @@
 FROM maptiler/tileserver-gl:v5.1.3
+CMD [ "--public_url", "https://dev.kartat.hsl.fi/map/v3" ]
 
 USER root
 
