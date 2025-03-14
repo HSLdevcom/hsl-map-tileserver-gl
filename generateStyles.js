@@ -7,7 +7,7 @@ const STYLES_FOLDER = tileserverGlConfig.options.paths.styles;
 
 const queryParams = [
   {
-    url: "https://cdn.digitransit.fi/", // Url pattern where the parameter should be added
+    url: "https://api.digitransit.fi/", // Url pattern where the parameter should be added
     name: "digitransit-subscription-key",
     value: process.env.DIGITRANSIT_APIKEY,
   }

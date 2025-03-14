@@ -14,7 +14,7 @@ RUN npm i -g yarn
 COPY . ${WORK}
 
 # COMMENT IF USING LOCAL STYLES
-RUN yarn install && node generateStyles.js 
+RUN yarn install && yarn make-styles
 
 # COMMENT IF USING LOCAL TILES
 RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles -q -t 3 -O ${DATA_DIR}/finland.mbtiles

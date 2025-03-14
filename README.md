@@ -29,5 +29,5 @@ If using other tiles than the ones downloaded from hsldevcom storage, they need 
 Generation of `hsl-map-style` styles can also be done manually without Docker by running these commands:
 ```bash
 yarn install
-node generateStyles.js
+yarn make-styles
 ```
