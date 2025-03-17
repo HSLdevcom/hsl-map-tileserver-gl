@@ -1,5 +1,4 @@
 FROM maptiler/tileserver-gl:v5.1.3
-CMD [ "--public_url", "https://dev.kartat.hsl.fi/map/v3" ]
 
 USER root
 
@@ -21,3 +20,8 @@ RUN yarn install && yarn make-styles
 RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/tiles.mbtiles -q -t 3 -O ${DATA_DIR}/finland.mbtiles
 
 EXPOSE 8080
+
+ARG PUBLIC_URL="http://localhost:8080"
+ENV PUBLIC_URL=${PUBLIC_URL}
+
+ENTRYPOINT /usr/src/app/docker-entrypoint.sh --public_url ${PUBLIC_URL}

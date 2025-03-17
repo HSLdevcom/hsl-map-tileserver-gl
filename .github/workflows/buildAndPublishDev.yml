@@ -39,8 +39,8 @@ jobs:
           push: true
           tags: ${{ format('hsldevcom/hsl-map-tileserver-gl:dev-{0}-{1}', steps.timestamp.outputs.timestamp, steps.commit_hash.outputs.hash) }}
           build-args: |
-            BUILD_ENV=dev
             DIGITRANSIT_APIKEY=${{ secrets.KARTAT_DIGITRANSITAPIKEY_DEV }}
+            PUBLIC_URL=${{ secrets.PUBLIC_URL_DEV }}
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -49,5 +49,5 @@ jobs:
           push: true
           tags: hsldevcom/hsl-map-tileserver-gl:dev
           build-args: |
-            BUILD_ENV=dev
             DIGITRANSIT_APIKEY=${{ secrets.KARTAT_DIGITRANSITAPIKEY_DEV }}
+            PUBLIC_URL=${{ secrets.PUBLIC_URL_DEV }}
