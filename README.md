@@ -13,6 +13,20 @@ Tileserver-gl image with HSL map styles to replace older hsl-map-server service.
     docker run -p 8080:8080 hsldevcom/hsl-map-tileserver-gl
     ```
 
+# Endpoints
+
+### Vectors
+`{host}/styles/{id}/{z}/{x}/{y}` 
+
+### Rasters
+`{host}/styles/{id}[/{tileSize}]/{z}/{x}/{y}[@2x].{format}`
+- The optional ratio @2x (ex. @2x, @3x, @4x) part can be used to render HiDPI (retina) tiles
+- The optional tile size /{tileSize} (ex. /256, /512). if omitted, tileSize defaults to 256.
+- Available formats: png, jpg (jpeg), webp
+
+### Styles 
+`{host}/styles/{id}/style.json`
+
 # Development
 
 Refer to the `Dockerfile` for turning off automatic `hsl-map-style` style generation as well as automatic OMT data downloading if you're developing tilesets or map styles.
@@ -31,3 +45,6 @@ Generation of `hsl-map-style` styles can also be done manually without Docker by
 yarn install
 yarn make-styles
 ```
+
+### Anything else ?
+Checkout the [tileserver-gl documentation](https://tileserver.readthedocs.io/en/latest/)

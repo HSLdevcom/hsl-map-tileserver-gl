@@ -41,7 +41,7 @@ const mapStylesToGenerate = [
     }
   },
   {
-    name: "hsl-map-fisv",
+    name: "hsl-map-fi-sv",
     sourcesUrl,
     queryParams,
     components: {
