@@ -1,0 +1,11 @@
+# OSX
+.DS_Store
+
+# Local tiles
+./data/*
+
+# Local styles
+./styles/*.json
+
+# Node
+node_modules
