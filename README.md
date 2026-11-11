@@ -5,7 +5,7 @@ Tileserver-gl image with HSL map styles to replace older hsl-map-server service.
 
 - Build the docker image:
     ```bash
-    docker build -t hsldevcom/hsl-map-tileserver-gl
+    docker build -t hsldevcom/hsl-map-tileserver-gl .
     ```
 
 - Start the container:
