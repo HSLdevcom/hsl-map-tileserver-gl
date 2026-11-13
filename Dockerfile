@@ -21,7 +21,6 @@ RUN wget https://hslstoragekarttatuotanto.blob.core.windows.net/openmaptiles/til
 
 EXPOSE 8080
 
-ARG PUBLIC_URL="http://localhost:8080"
-ENV PUBLIC_URL=${PUBLIC_URL}
-
-ENTRYPOINT /usr/src/app/docker-entrypoint.sh --public_url ${PUBLIC_URL}
+# Without --public_url, tile URLs in TileJSON are derived from the request
+# (Host, X-Forwarded-Proto), so the same image works behind any proxy.
+ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]

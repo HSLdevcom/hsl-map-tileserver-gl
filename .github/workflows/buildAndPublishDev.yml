@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - 'development'
+  workflow_dispatch:
+  # Nightly rebuild to pick up fresh map tiles and styles.
+  # Schedules run from the default branch, so check out the branch explicitly.
+  schedule:
+    - cron: '45 0 * * *'
 
 jobs:
   build-container:
@@ -11,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: development
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
@@ -26,7 +33,7 @@ jobs:
       
       - name: Get commit hash
         id: commit_hash
-        run: echo "hash=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_OUTPUT
+        run: echo "hash=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Get image timestamp
         id: timestamp
@@ -38,9 +45,6 @@ jobs:
           context: .
           push: true
           tags: ${{ format('hsldevcom/hsl-map-tileserver-gl:dev-{0}-{1}', steps.timestamp.outputs.timestamp, steps.commit_hash.outputs.hash) }}
-          build-args: |
-            DIGITRANSIT_APIKEY=${{ secrets.KARTAT_DIGITRANSITAPIKEY_DEV }}
-            PUBLIC_URL=${{ secrets.PUBLIC_URL_DEV }}
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -48,6 +52,3 @@ jobs:
           context: .
           push: true
           tags: hsldevcom/hsl-map-tileserver-gl:dev
-          build-args: |
-            DIGITRANSIT_APIKEY=${{ secrets.KARTAT_DIGITRANSITAPIKEY_DEV }}
-            PUBLIC_URL=${{ secrets.PUBLIC_URL_DEV }}

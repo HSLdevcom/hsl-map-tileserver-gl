@@ -17,6 +17,3 @@ jobs:
         with:
           context: .
           tags: hsldevcom/hsl-map-tileserver-gl:dev
-          build-args: |
-            PUBLIC_URL=${{ secrets.PUBLIC_URL_DEV }}
-            DIGITRANSIT_APIKEY=${{ secrets.KARTAT_DIGITRANSITAPIKEY_DEV }}
