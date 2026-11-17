@@ -1,0 +1,15 @@
+{
+  "name": "hsl-map-tileserver-gl",
+  "version": "1.0.0",
+  "main": "generateStyles.js",
+  "repository": "https://github.com/HSLdevcom/hsl-map-tileserver-gl",
+  "author": "hsldevcom",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "make-styles": "node generateStyles.js"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "hsl-map-style": "https://github.com/HSLdevcom/hsl-map-style#master"
+  }
+}

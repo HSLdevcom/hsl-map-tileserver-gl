@@ -1,0 +1,30 @@
+{
+    "options": {
+      "paths": {
+        "root": "/",
+        "styles": "styles",
+        "mbtiles": "data"
+      },      
+      "frontPage": true,
+      "formatOptions": {
+        "jpeg": { "quality": 80 },
+        "webp": { "quality": 90 }
+      },
+      "maxScaleFactor": 3,
+      "maxSize": 2048,
+      "tileMargin": 8,
+      "minRendererPoolSizes": [8, 4, 2],
+      "maxRendererPoolSizes": [16, 8, 4],
+      "pbfAlias": "pbf",
+      "serveAllStyles": true,
+      "serveAllFonts": true,
+      "serveStaticMaps": false
+    },
+    "styles": {},
+    "sources": {},
+    "data": {
+      "openmaptiles": {
+        "mbtiles": "finland.mbtiles"
+      }
+    }
+  }
